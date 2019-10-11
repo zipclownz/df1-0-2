@@ -1,0 +1,108 @@
+html {
+    height: 100%;
+    background-color: #000;
+}
+body {
+    margin: 0;
+    max-height: 100%;
+    height: 100%;
+    overflow: hidden;
+    background-color: #000;
+    font-family: Helvetica, arial, sans-serif;
+    position: relative;
+    width: 100%;
+
+    -webkit-tap-highlight-color: transparent;
+}
+
+#application-canvas {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+#application-canvas.fill-mode-NONE {
+    margin: auto;
+}
+#application-canvas.fill-mode-KEEP_ASPECT {
+    width: 100%;
+    height: auto;
+    margin: 0;
+}
+#application-canvas.fill-mode-FILL_WINDOW {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+}
+
+canvas:focus {
+    outline: none;
+}
+
+#application-splash-wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width: auto;
+    height: auto;
+    background-color: #000;
+    background-image: url("./loading/background.jpg");
+    background-position: center center;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+#application-splash-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width: auto;
+    height: auto;
+    background-color: #000;
+    background-image: url("./loading/overlay.jpg");
+    background-position: center center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    mix-blend-mode: screen;
+    -webkit-mask-image: -webkit-linear-gradient(top left, rgba(0,0,0,0) 40%, rgba(0,0,0,1) 50%, rgba(0,0,0,0) 60%);
+    -webkit-mask-repeat: no-repeat;
+    animation-name: overlaySlide;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+}
+#application-splash {
+    position: absolute;
+    top: calc(50% - 28px);
+    width: 264px;
+    left: calc(50% - 132px);
+}
+#application-splash img {
+    width: 100%;
+}
+#progress-bar-container {
+    margin: 0 auto;
+    height: 4px;
+    width: 100%;
+    background-color: #000;
+    border: 2px solid #888;
+    border-radius: 2px;
+}
+#progress-bar {
+    width: 0%;
+    height: 100%;
+    background-image: linear-gradient(to bottom, #f0f0f0, #6d6d6d);
+}
+
+@keyframes overlaySlide {
+    from {
+        -webkit-mask-position-x: -700px;
+    }
+    to {
+        -webkit-mask-position-x: 700px;
+    }
+}
